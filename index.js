@@ -5,7 +5,7 @@ async function buscaPartidos() {
     await fetch('https://dadosabertos.camara.leg.br/api/v2/partidos')
         .then(response => response.json())
         .then(data => {
-            resultado.innerHTML = ''; // Limpa o conteúdo anterior
+            resultado.innerHTML = '';
             data.dados.forEach(partido => {
                 resultado.innerHTML += `<button onclick='buscaParlamentar(${partido.id})'>Nome: ${partido.nome}</button>`;
             });
